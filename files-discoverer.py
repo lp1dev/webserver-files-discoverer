@@ -33,7 +33,7 @@ def             test_file(domain, filename):
   return False
 
 async def       discover(domain, files, threads=2):
-  print("Starting PHP Discoverer\nScan report for %s" %domain)
+  print("Starting Webserver Files Discoverer\nScan report for %s" %domain)
   print("Scanning %i filenames (using %i threads)" % (len(files), threads))
   results = []
   with concurrent.futures.ThreadPoolExecutor(max_workers=threads) as executor:

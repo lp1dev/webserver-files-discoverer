@@ -1,6 +1,6 @@
-# PHP Files Discoverer
+# Webserver Files Discoverer
 
-Python tool to scan a domain for PHP files
+WFD is a Python discovery tool to scan a domain using a list of supposedly present files
 
 ## Requirements
     - python3.5+
@@ -8,12 +8,16 @@ Python tool to scan a domain for PHP files
 
 ## Usage
 
-    > ./php-discoverer.py [domain] [files_lists URLs, separated by a whitespace]
+    > ./files-discoverer.py [http://|https://][domain] [files_lists URLs, separated by a whitespace]
 
+## Example
+
+    > ./files-discoverer.py http://mynonexisting.domain.org https://raw.githubusercontent.com/danielmiessler/SecLists/master/Discovery/Web_Content/Common_PHP_Filenames.txt
+    
 ## License
 
 ```
-PHP files discoverer
+Webserver files discoverer
 Copyright (C) 2017 lp1.eu
 
 This program is free software: you can redistribute it and/or modify
