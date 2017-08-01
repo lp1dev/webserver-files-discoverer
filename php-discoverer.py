@@ -4,15 +4,15 @@ import asyncio
 import requests
 import concurrent
 
-report_file = "report-%s.txt"
+report_file = "report.txt"
 filesLists = argv[2:]
 
 def             usage():
   print("%s : domain files_list1 files_list2 [...]" %argv[0])
   return -1
 
-def             add_to_report(domain, filename):
-  with open(report_file %domain, "a+") as f:
+def             add_to_report(filename):
+  with open(report_file, "a+") as f:
     f.write("%s\n" %filename)
 
 def             get_list(url):
@@ -28,7 +28,7 @@ def             test_file(domain, filename):
   r = requests.get(url)
   if (r.status_code - (r.status_code % 100) == 200): # Checking if the status code is 2XX
     print("\t[+] found existing file %s" %url)
-    add_to_report(domain, filename)
+    add_to_report(filename)
     return url
   return False
 
